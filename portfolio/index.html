@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhayan Dutta - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+        <span>Theme</span>
+    </button>
+
+    <header>
+        <nav>
+            <div class="left">Subhayan's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="firstSection">
+            <div class="leftSection">
+                <h1>
+                    Hi, My name is
+                    <span class="purple">Subhayan</span>
+                </h1>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+            </div>
+            <div class="rightSection">
+                <img src="bg.jpg" alt="Subhayan Dutta" loading="eager">
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>I am a passionate developer with expertise in web development and video editing. I love creating beautiful and functional websites that provide great user experiences. With a strong foundation in both front-end and back-end technologies, I strive to build innovative solutions that make a difference.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="experience" class="secondSection">
+            <span class="text-gray">What I have done so far</span>
+            <h1>Work Experience</h1>
+
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="Developer.jpeg" alt="">
+                    <div class="vertical-title">
+                        Web Developer (2022-Present)
+                    </div>
+                    <div class="vertical-desc">
+                        Developing responsive and interactive web applications using modern technologies.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="Developer.jpeg" alt="">
+                    <div class="vertical-title">
+                        Video Editor (2021-2022)
+                    </div>
+                    <div class="vertical-desc">
+                        Created engaging video content for various clients and platforms.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="Developer.jpeg" alt="">
+                    <div class="vertical-title">
+                        UI/UX Designer (2020-2021)
+                    </div>
+                    <div class="vertical-desc">
+                        Designed user-friendly interfaces and improved user experiences.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Project 1">
+                    <h3>E-commerce Website</h3>
+                    <p>A full-stack e-commerce platform built with React and Node.js</p>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive portfolio website showcasing my work</p>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Project 3">
+                    <h3>Video Editing Portfolio</h3>
+                    <p>A collection of my video editing projects</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">HTML5</div>
+                <div class="skill-item">CSS3</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Video Editing</div>
+                <div class="skill-item">UI/UX Design</div>
+                <div class="skill-item">Responsive Design</div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i>subhayandutta100@gmail.com</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/subhayan-dutta-457a4b2b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/Subhayan1way" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="mailto:subhayandutta100@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a>
+            </div>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Subhayan Dutta. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

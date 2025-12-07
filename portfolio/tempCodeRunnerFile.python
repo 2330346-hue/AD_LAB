@@ -1,0 +1,22 @@
+# perceptron model to implement AND function with binary inputs and targets
+# using Perceptron learning algorithm. Consider zero initial weights and bias with learning rate ƞ=0.25. without any library
+def perceptron_and(inputs, targets, learning_rate=0.25):
+    weights = [0, 0]  # Initialize weights to zero (2 weights for 2 inputs)
+    bias = 0 # Initialize bias to zero
+    
+    for epoch in range(100):  # Run for a fixed number of epochs
+        for i in range(len(inputs)):
+            # Calculate the weighted sum
+            z = sum(w * x for w, x in zip(weights, inputs[i])) + bias
+            
+            # Activation function (step function)
+            output = 1 if z >= 0 else 0
+            
+            # Update weights and bias if the output is not equal to the target
+            if output != targets[i]:
+                error = targets[i] - output
+                weights = [w + learning_rate * error * x for w, x in zip(weights, inputs[i])]
+                bias += learning_rate * error
+    return weights, bias
+
+print("Weights, Bias", perceptron_and([[0, 0], [0, 1], [1, 0], [1, 1]], [0, 0, 0, 1]))
