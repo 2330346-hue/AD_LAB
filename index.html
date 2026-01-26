@@ -3,63 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Lab Experiments</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Scraper | Minimal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
-    <nav>
-        <div class="logo">AI Lab.</div>
-        <div class="nav-links">
-            <button class="nav-btn active" onclick="switchTab('classification')">Image Classify</button>
-            <button class="nav-btn" onclick="switchTab('regression')">Stock Forecast</button>
-        </div>
-    </nav>
-
-    <main>
-        <section id="classification" class="card active">
-            <div class="card-header">
-                <h2>Visual Recognition</h2>
-                <p>Detect objects using MobileNetV2</p>
+    
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-circle"></div>
+                <h1>Scraper</h1>
             </div>
             
-            <div class="upload-zone" id="drop-zone">
-                <input type="file" id="imageInput" accept="image/*" hidden>
-                <label for="imageInput" class="upload-label">
-                    <span>Click to Upload Image</span>
-                </label>
+            <nav class="nav-menu">
+                <button class="nav-item active" onclick="switchTab('url-scrape')">
+                    Single URL
+                </button>
+                <button class="nav-item" onclick="switchTab('topic-search')">
+                    Topic Search
+                </button>
+                <button class="nav-item" onclick="switchTab('batch-scrape')">
+                    Batch Process
+                </button>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <p>AI Powered v2.0</p>
             </div>
+        </aside>
 
-            <div id="result-container" class="result-box hidden">
-                <img id="preview" src="" alt="Preview">
-                <div class="meta">
-                    <h3><span id="prediction-text">...</span></h3>
-                    <p>Confidence: <span id="confidence-text">...</span></p>
+        <main class="main-content">
+            <!-- URL Tab -->
+            <div id="url-scrape" class="view-section active">
+                <header class="section-header">
+                    <h2>Analyze URL</h2>
+                    <p>Extract and summarize content from a single webpage.</p>
+                </header>
+                
+                <div class="input-card">
+                    <input type="url" id="url-input" placeholder="Paste URL here (e.g., https://example.com)...">
+                    <button onclick="scrapeUrl()" class="btn-primary">Analyze</button>
                 </div>
             </div>
-            
-            <button class="action-btn" onclick="processImage()">Analyze</button>
-        </section>
 
-        <section id="regression" class="card">
-            <div class="card-header">
-                <h2>Market Forecasting</h2>
-                <p>Linear Regression (Long-Term) vs LSTM (Short-Term)</p>
+            <!-- Search Tab -->
+            <div id="topic-search" class="view-section">
+                <header class="section-header">
+                    <h2>Topic Research</h2>
+                    <p>Search the web and aggregate findings.</p>
+                </header>
+                
+                <div class="input-card">
+                    <input type="text" id="topic-input" placeholder="Enter topic (e.g., Climate Change)...">
+                    <button onclick="searchAndScrape()" class="btn-primary">Research</button>
+                </div>
             </div>
 
-            <div class="input-row">
-                <input type="text" id="tickerInput" placeholder="Ticker (e.g. NVDA)" value="AAPL">
-                <button class="action-btn" id="predictBtn" onclick="predictStock()">Generate Forecast</button>
+            <!-- Batch Tab -->
+            <div id="batch-scrape" class="view-section">
+                <header class="section-header">
+                    <h2>Batch Processing</h2>
+                    <p>Analyze multiple URLs simultaneously.</p>
+                </header>
+                
+                <div class="input-card">
+                    <textarea id="batch-urls" placeholder="Paste URLs (one per line)..."></textarea>
+                    <button onclick="batchScrape()" class="btn-primary">Process All</button>
+                </div>
             </div>
 
-            <div class="chart-container">
-                <canvas id="stockChart"></canvas>
+            <!-- Output Area -->
+            <div id="loading" class="loading-state hidden">
+                <div class="spinner"></div>
+                <span>Processing data...</span>
             </div>
-        </section>
-    </main>
 
-    <script src="app.js"></script>
+            <div id="results" class="results-container hidden">
+                <!-- Content injected by JS -->
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
