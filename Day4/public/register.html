@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Student Access Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Join Student Access Portal</h2>
+        <p class="subtitle" style="color: #64748B; margin-bottom: 24px; font-size: 0.95rem;">Create your student account</p>
+        
+        <form id="registerForm">
+            <input type="text" id="first_name" placeholder="First Name" required>
+            <input type="text" id="last_name" placeholder="Last Name" required>
+            <input type="text" id="reg_username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="password" id="reg_password" placeholder="Password" required>
+            
+            <button type="submit" class="btn-primary">Create Account</button>
+        </form>
+        
+        <p class="footer-link">Already have an account? <a href="/login.html">Sign in</a></p>
+    </div>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
